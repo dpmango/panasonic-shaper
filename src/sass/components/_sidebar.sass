@@ -5,7 +5,7 @@
   padding-bottom: 25px
   position: fixed
   top: 0
-  bottom: 0
+  // bottom: 0
   right: 0
   z-index: 3
   display: flex
@@ -19,7 +19,7 @@
     li
       font-size: 32px
       font-weight: 500
-      margin-bottom: 30px
+      margin-bottom: 0.95em
       line-height: 1
       text-transform: uppercase
       display: block
@@ -82,13 +82,19 @@
     text-align: center
     text-transform: uppercase
 
-@media only screen and (max-width: 1610px), screen and (max-height: 900px)
+@media only screen and (max-width: 1610px), screen and (max-height: 1000px)
   .sidebar
     padding-top: 120px
     &__product
       margin-bottom: -80px
       img
         width: 80%
+    &__nav
+      li
+        font-size: 2vw
+      a
+        .ico
+          font-size: 2.7vw
 
 +r($desktop)
   .sidebar

@@ -98,7 +98,7 @@ $(document).ready(function(){
   //////////
   function positionElements(){
     var wWidth = _window.width();
-    var containerPadding = _window.width() <= 992 ? 20 : 40
+    var containerPadding = _window.width() <= 1024 ? 20 : 40
     var containerWidth = 1530 + containerPadding * 2
     var wDiff = wWidth - containerWidth
     var sidebar = {
