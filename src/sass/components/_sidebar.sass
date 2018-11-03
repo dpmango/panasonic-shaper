@@ -53,6 +53,7 @@
     margin-bottom: -110px
     transform: translateX(140px)
     pointer-events: none
+    text-align: center
     img
       max-width: 100%
       width: 100%
@@ -64,14 +65,14 @@
     font-size: 0
     max-width: 100%
     .ico
-      // font-size: 42px
-      font-size: 32px
+      font-size: 42px
+      // font-size: 32px
       // TODO - why the height is different ?
     span
       display: inline-block
       position: absolute
       top: -7px
-      right: -15px
+      right: -13px
       font-size: 35px
 
   &__logo-verbal
@@ -80,6 +81,14 @@
     letter-spacing: 0.22em
     text-align: center
     text-transform: uppercase
+
+@media only screen and (max-width: 1610px), screen and (max-height: 900px)
+  .sidebar
+    padding-top: 120px
+    &__product
+      margin-bottom: -80px
+      img
+        width: 80%
 
 +r($desktop)
   .sidebar

@@ -15,15 +15,23 @@ $(document).ready(function(){
   function pageReady(){
     updateHeaderActiveClass();
     positionElements();
+
     // initScroller();
   }
 
   _window.on('resize', debounce(positionElements, 50))
+  _window.on('resize', throttle(minHeight, 50))
   _window.on('resize', debounce(setBreakpoint, 200))
 
   // this is a master function which should have all functionality
   pageReady();
 
+  _window.on('load', function(){
+    minHeight();
+  })
+
+  _window.on("load ready", viewportControl);
+  _window.on("resize", debounce(viewportControl, 200));
 
   //////////
   // COMMON
@@ -61,6 +69,13 @@ $(document).ready(function(){
     $('.mobile-navi').toggleClass('is-active');
   });
 
+  _document.on('click', function(e){
+    if (
+      $(event.target).closest('.header').length === 0 ) {
+      closeMobileMenu();
+    }
+  })
+
   function closeMobileMenu(){
     $('[js-hamburger]').removeClass('is-active');
     $('.mobile-navi').removeClass('is-active');
@@ -77,14 +92,6 @@ $(document).ready(function(){
       }
     });
   }
-
-  //////////
-  // TEST to parse all svg stroke length
-  //////////
-  $('.bg-image__beard svg .stroke').each(function(i, path){
-    var length = Math.ceil(path.getTotalLength());
-    console.log($(path).attr('class'), length)
-  })
 
   //////////
   // POSITION ELEMENTS
@@ -109,6 +116,33 @@ $(document).ready(function(){
       'right': sidebar.right
     })
   }
+
+  //////////
+  // MIN HEIGHT
+  //////////
+  function minHeight(){
+    if ( $('[js-min-height]').length > 0 ) {
+      var wWidth = _window.width();
+
+      // for example keep sidebar always visible
+      $('[js-min-height]').each(function(i, el){
+        var $el = $(el);
+        var $target = $($el.data('target'));
+        var targetHeight = Math.round($target.outerHeight());
+        var stopListen = wWidth <= $el.data('stop')
+
+        if ( stopListen ){
+          $el.attr('style', '');
+        } else {
+          $el.css({
+            'min-height': targetHeight
+          })
+        }
+
+      })
+    }
+  }
+
 
   //////////
   // Scroller
@@ -270,6 +304,22 @@ $(document).ready(function(){
   }
 
   //////////
+  // viewport controll
+  //////////
+  function viewportControl() {
+    let viewportMeta = _document.find('meta[name="viewport"]');
+
+    if (!viewportMeta.length > 0) return;
+
+    console.log(screen.width)
+    if (screen.width <= 640) {
+      viewportMeta.attr('content', 'width=640, user-scalable=no');
+    } else {
+      viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
+    }
+  }
+
+  //////////
   // DEVELOPMENT HELPER
   //////////
   function setBreakpoint(){
@@ -289,5 +339,13 @@ $(document).ready(function(){
       },1500)
     }
   }
+
+  //////////
+  // TEST to parse all svg stroke length
+  //////////
+  // $('.bg-image__beard svg .stroke').each(function(i, path){
+  //   var length = Math.ceil(path.getTotalLength());
+  //   console.log($(path).attr('class'), length)
+  // })
 
 });

@@ -1,0 +1,53 @@
+.mobile-navi
+  position: absolute
+  top: 0
+  right: 0
+  z-index: 1
+  display: none
+  background: black
+  top: 82px
+  right: 7px
+  opacity: 0
+  pointer-events: none
+  transform: translate(10px,0)
+  transition: .25s $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translate(0,0)
+  &__menu
+    list-style: none
+    margin: 0
+    padding: 0
+    min-width: 250px
+    padding: 10px 3px
+  li
+    font-size: 37px
+    display: block
+    line-height: 1
+    text-align: right
+    text-transform: uppercase
+    a
+      display: block
+      padding: 22px 20px 10px 10px
+      border-bottom: 2px solid rgba(white, .35)
+      transition: .25s $ease
+      &:hover
+        border-color: white
+    &:last-child
+      a
+        border-bottom: 0
+
+  // aka modifiers
+  // for different link styles
+  &__feature
+    font-weight: 500
+    letter-spacing: 0.2em
+
+  &__page
+    font-weight: 300
+    letter-spacing: 0.02em
+
++r($desktop)
+  .mobile-navi
+    display: block

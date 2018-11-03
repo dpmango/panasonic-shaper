@@ -75,6 +75,7 @@
 
   &__cta
     position: relative
+    z-index: 2
     min-width: 240px
     &-btn
       position: relative
@@ -102,7 +103,7 @@
       right: -10px
       left: -10px
       padding-top: 70px
-      border-radius: 6px
+      border-radius: 4px
       opacity: 0
       pointer-events: none
       transform: translate(0,10px)
@@ -115,13 +116,13 @@
 
   &__hamburger
     display: none
-    padding-left: 20px
+    margin-left: 20px
 
 +r($uhd)
   .header
     &__logo
       img
-        max-width: 200px
+        max-width: 190px
     &__home
       transform: translateY(-5px)
       .ico
@@ -135,9 +136,6 @@
 
 +r($wide)
   .header
-    &__logo
-      img
-        max-width: 160px
     &__home
       display: none
       // // transform: translateY(-3px)
@@ -165,19 +163,23 @@
     &__menu
       display: none
     &__userarea
-      order: 1
-      margin-left: auto
-    &__cta
       order: 2
+      margin-left: 30px
+      margin-right: 0
+    &__cta
+      margin-left: auto
+      order: 1
     &__hamburger
       order: 3
       display: inline-block
 
 +r($tablet)
   .header
+    &__wrapper
+      margin-right: 0
     &__logo
       img
-        max-width: 95px
+        max-width: 190px
 
 .shop
   display: inline-block
