@@ -18,7 +18,7 @@ $(document).ready(function(){
     // initScroller();
   }
 
-  _window.on('resize', debounce(positionElements, 200))
+  _window.on('resize', debounce(positionElements, 50))
   _window.on('resize', debounce(setBreakpoint, 200))
 
   // this is a master function which should have all functionality

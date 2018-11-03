@@ -34,7 +34,7 @@ body
   background: $colorBlue
   color: white
 
-  
+
 .page
   position: fixed
   top: 0
@@ -46,6 +46,14 @@ body
   backface-visibility: hidden
   transform-style: preserve-3d
   &__content
+    position: relative
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      z-index: 1
+      background: url('../img/bgVignette.jpg') no-repeat top right
+      background-size: contain
 
 .container
   // 1530px
@@ -57,6 +65,11 @@ body
   padding-right: 40px
   &--s-offset
     padding-right: calc(180px + 40px)
+
++r($desktop)
+  .container
+    &--s-offset
+      padding-right: 40px
 
 +r($mobile)
   .container

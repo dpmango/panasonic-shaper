@@ -21,6 +21,8 @@
     flex: 0 0 auto
     padding-right: 30px
     font-size: 0
+    img
+      max-width: 100%
 
   &__home
     // margin-right: auto
@@ -115,7 +117,67 @@
     display: none
     padding-left: 20px
 
++r($uhd)
+  .header
+    &__logo
+      img
+        max-width: 200px
+    &__home
+      transform: translateY(-5px)
+      .ico
+        font-size: 25px
+    &__menu
+      li
+        font-size: 25px
+        margin-right: 50px
+        &::after
+          right: -25px
 
++r($wide)
+  .header
+    &__logo
+      img
+        max-width: 160px
+    &__home
+      display: none
+      // // transform: translateY(-3px)
+      // .ico
+      //   font-size: 22px
+    &__menu
+      margin-left: auto
+      li
+        font-size: 22px
+        margin-right: 40px
+        &::after
+          right: -20px
+    &__cta
+      min-width: 180px
+      &-btn
+        padding: 12px 25px 8px
+        font-size: 20px
+    &__userarea
+      transform: scale(.8)
+
++r($desktop)
+  .header
+    &__contents
+      padding-top: 10px
+    &__menu
+      display: none
+    &__userarea
+      order: 1
+      margin-left: auto
+    &__cta
+      order: 2
+    &__hamburger
+      order: 3
+      display: inline-block
+
++r($tablet)
+  .header
+    &__logo
+      img
+        max-width: 95px
 
 .shop
   display: inline-block
