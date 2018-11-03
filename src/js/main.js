@@ -307,11 +307,10 @@ $(document).ready(function(){
   // viewport controll
   //////////
   function viewportControl() {
-    let viewportMeta = _document.find('meta[name="viewport"]');
+    var viewportMeta = _document.find('meta[name="viewport"]');
 
     if (!viewportMeta.length > 0) return;
 
-    console.log(screen.width)
     if (screen.width <= 640) {
       viewportMeta.attr('content', 'width=640, user-scalable=no');
     } else {
