@@ -3,20 +3,27 @@ header.header
   .container
     .header__wrapper
       a(href="#").header__logo
-        +icon('ico-email')
-      ul.header__menu
-        - var list = ["Homepage", "Shop", "Blog", "Lorem"]
-          each item in list
-            li
-              a.header__menu-link(href="#")=item
-      
-      .header__cta
-        .header__cart
-          +icon('ico-email')
-      
-      .header__hamburger
-        .hamburger.hamburger--squeeze(js-hamburger)
-          .hamburger-box
-            .hamburger-inner
+        i.icon.icon-logo
+          
+      .header__contents
+        a(href="#").header__home
+          +icon('ico-home')
+              
+        ul.header__menu
+          li
+            a(href="#") особенности
+          li
+            a(href="#") характеристики
+        
+        a(href="#").header__userarea
+          i.icon.icon-userarea
+            
+        .header__cta
+          a(href="#") Купить
+          
+        .header__hamburger
+          .hamburger.hamburger--squeeze(js-hamburger)
+            .hamburger-box
+              .hamburger-inner
         
 // HEADER :: END

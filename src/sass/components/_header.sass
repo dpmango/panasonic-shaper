@@ -1,58 +1,90 @@
 /* HEADER
 .header
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   left: 0
-  background: #f5f5f5
+  z-index: 10
+  background: transparent
   &__wrapper
     display: flex
     align-items: center
-    height: 70px
+    // header right offset
+    margin-right: -20px
+  &__contents
+    flex: 1 1 auto
+    padding-top: 20px
+    display: flex
+    align-items: center
 
   &__logo
     flex: 0 0 auto
-    font-size: 35px
     padding-right: 30px
+    font-size: 0
+
+  &__home
+    // margin-right: auto
+    display: inline-block
+    margin-left: auto
+    font-size: 0
+    transform: translateY(-10px)
+    transition: .25s $ease
+    .ico
+      font-size: 32px
+    &:hover, &.is-active
+      color: $colorBlue
 
   &__menu
     flex: 0 1 auto
     display: flex
     align-items: center
-    font-size: 18px
-    margin: 0 auto
+    margin: 0 auto 0 5%
     padding: 0
     li
+      position: relative
       display: inline-block
-      margin-right: 30px
+      margin-right: 60px
+      font-size: 33px
+      line-height: 1
+      letter-spacing: 0.3em
+      text-transform: uppercase
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 0
+        bottom: 0
+        right: -30px
+        width: 1px
+        background: rgba(white, .5)
+      &:last-child
+        margin-right: 0
+        &::after
+          display: none
     a
       transition: color .25s $ease
-      &:hover
-        color: tomato
+      transition: .25s $ease
+      &:hover, &.is-active
+        text-shadow: 2px 0px 0px white
+
+  &__userarea
+    margin-right: 30px
+    font-size: 0
 
   &__cta
-    margin-left: auto
-    padding-left: 30px
-
-  &__hamburger
-    // display: none
-    padding-left: 20px
-
-
-+r($desktop)
-  .header
-    &__cta
-      display: none
-
-+r($tablet)
-  .header
-    &__menu
-      display: none
-    &__hamburger
-      margin-left: auto
+    min-width: 240px
+    a
+      position: relative
       display: block
-
-+r($mobile)
-  .header
-    &__logo
-      font-size: 30px
+      font-size: 25px
+      font-weight: 700
+      text-transform: uppercase
+      text-align: center
+      background: #0378bf
+      border-radius: 20px
+      // wft happening with fonts ?
+      padding: 14px 25px 10px
+      line-height: normal
+  &__hamburger
+    display: none
+    padding-left: 20px

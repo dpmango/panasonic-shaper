@@ -14,9 +14,9 @@ ul
     display: inline-block
 
 body, html
-  background: white
-  color: $fontColor
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  background: #1b1b23
+  color: white
+  font-family: 'PF Din Text Comp Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif
   font-size: 16px
   min-width: 320px
   max-width: 100%
@@ -25,25 +25,38 @@ body, html
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+body
+  height: 100vh
+  width: 100%
+  overflow: hidden
+
+::selection
+  background: $colorBlue
+  color: white
+
+  
 .page
-  display: flex
-  flex-direction: column
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 1
   min-height: 100vh
+  will-change: transform
+  backface-visibility: hidden
+  transform-style: preserve-3d
   &__content
-    // used for sticky footer (flexbox way)
-    flex: 1 0 auto
-    display: flex
-    flex-direction: column
-    // header offset ex
-    padding-top: 100px
 
 .container
-  max-width: 1200px
+  // 1530px
+  max-width: 1610px
   width: 100%
   margin-left: auto
   margin-right: auto
   padding-left: 40px
   padding-right: 40px
+  &--s-offset
+    padding-right: calc(180px + 40px)
 
 +r($mobile)
   .container

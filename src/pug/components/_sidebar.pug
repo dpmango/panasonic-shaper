@@ -1,0 +1,26 @@
+// SIDEBAR :: START
+.sidebar(js-position-sidebar)
+  ul.sidebar__nav
+    li
+      a(href='#') 
+        span бритьё
+        +icon('ico-nav-arrow')
+    li
+      a(href="#") 
+        span стрижка
+        +icon('ico-nav-arrow')
+    li
+      a(href="#") 
+        span дизайн
+        +icon('ico-nav-arrow')
+  
+  .sidebar__product
+    img(src='img/productImage.png')
+    //- img(src='img/productImage.png' srcset='img/productImage@2x.png 2x')
+  .sidebar__logo
+    .sidebar__logo-icon
+      +icon('ico-logo-shaper')
+      span *
+    .sidebar__logo-verbal *Айшейпер
+      
+// SIDEBAR :: END
