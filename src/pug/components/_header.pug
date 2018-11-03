@@ -19,7 +19,25 @@ header.header
           i.icon.icon-userarea
             
         .header__cta
-          a(href="#") Купить
+          .header__cta-btn Купить
+          .header__cta-dropdown
+            a(href="#").shop
+              .shop__icon
+                i.icon.icon-logo-mvideo
+              .shop__prices
+                .shop__price.shop__price--old.shop__price--red 7 000 
+                  span руб.
+                .shop__price 6 000 
+                  span руб.
+            a(href="#").shop
+              .shop__icon
+                i.icon.icon-logo-eplaza
+              .shop__prices
+                //- .shop__price.shop__price--old.shop__price--blue 7 000 
+                //-   span руб.
+                .shop__price 6 999 
+                  span руб.
+            
           
         .header__hamburger
           .hamburger.hamburger--squeeze(js-hamburger)
@@ -27,3 +45,6 @@ header.header
               .hamburger-inner
         
 // HEADER :: END
+
+
+//- include _userarea.pug

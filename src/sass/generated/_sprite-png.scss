@@ -1,11 +1,29 @@
 $sprite: (
 	logo-blade: (
-		offset-x: 0px,
-		offset-y: -116px,
+		offset-x: -239px,
+		offset-y: 0px,
 		width: 127px,
 		height: 67px,
-		total-width: 229px,
-		total-height: 183px,
+		total-width: 366px,
+		total-height: 247px,
+		image: '../img/sprite.png'
+	),
+	logo-eplaza: (
+		offset-x: 0px,
+		offset-y: -191px,
+		width: 147px,
+		height: 56px,
+		total-width: 366px,
+		total-height: 247px,
+		image: '../img/sprite.png'
+	),
+	logo-mvideo: (
+		offset-x: 0px,
+		offset-y: -116px,
+		width: 143px,
+		height: 65px,
+		total-width: 366px,
+		total-height: 247px,
 		image: '../img/sprite.png'
 	),
 	logo: (
@@ -13,17 +31,17 @@ $sprite: (
 		offset-y: 0px,
 		width: 229px,
 		height: 106px,
-		total-width: 229px,
-		total-height: 183px,
+		total-width: 366px,
+		total-height: 247px,
 		image: '../img/sprite.png'
 	),
 	userarea: (
-		offset-x: -137px,
-		offset-y: -116px,
+		offset-x: -239px,
+		offset-y: -77px,
 		width: 54px,
 		height: 54px,
-		total-width: 229px,
-		total-height: 183px,
+		total-width: 366px,
+		total-height: 247px,
 		image: '../img/sprite.png'
 	),
 );
@@ -84,6 +102,12 @@ $sprite: (
 
 	.icon-logo-blade {
 		@include sprite(logo-blade)
+	}
+	.icon-logo-eplaza {
+		@include sprite(logo-eplaza)
+	}
+	.icon-logo-mvideo {
+		@include sprite(logo-mvideo)
 	}
 	.icon-logo {
 		@include sprite(logo)

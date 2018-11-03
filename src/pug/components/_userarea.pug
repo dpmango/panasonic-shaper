@@ -1,0 +1,144 @@
+aside#sidebar(style='right: 0px;')
+  div
+    a.close(href='#')
+    #authorization.sidebar_window(style='display: block;')
+      .login
+        h2 АВТОРИЗАЦИЯ
+        form.direct_crm_form_ajax(method='POST')
+          .direct_crm_info_ajax
+          input(type='hidden', name='DIRECT_CRM_SSID', value='djnap9o1v8a1r10tf9dq22bg31')
+          input(type='hidden', name='DIRECT_CRM_AUTH_FORM', value='Y')
+          input.email(type='text', placeholder='E-mail', name='DIRECT_CRM_EMAIL', autocomplete='off')
+          input.password(type='password', placeholder='********', name='DIRECT_CRM_PASSWORD', autocomplete='off')
+          button(type='submit') Войти
+          input#remember(type='checkbox')
+          label(for='remember') Запомнить меня
+          a.recovery(href='#') Восстановить пароль
+        .with_social.shadow
+          span.label Войти как пользователь:
+          a.vk(href='https://oauth.vk.com/authorize?client_id=4690025&scope=notify&redirect_uri=https://club.panasonic.ru/index.php?SocialAutherProvider=vk&response_type=code')
+          a.facebook(href='https://www.facebook.com/dialog/oauth?client_id=755742007856121&redirect_uri=https://club.panasonic.ru/index.php?SocialAutherProvider=facebook&response_type=code&scope=email,user_birthday')
+          a.twitter(href='https://www.odnoklassniki.ru/oauth/authorize?client_id=1113492992&response_type=code&redirect_uri=https://club.panasonic.ru/index.php?SocialAutherProvider=odnoklassniki')
+      // login
+      .registration
+        style.
+          #sidebar {
+          height: 100%;
+          width:365px;
+          overflow-y:scroll;
+          }
+          #registrationForm select {
+          width:100%!important;
+          }
+          #registrationForm .errors_block {
+          padding: 10px 0;
+          color:red;
+          }
+        h2 РЕГИСТРАЦИЯ
+        #registrationForm
+          form#DIRECT_CRM_REGISTER_FORM(action='', method='post')
+            input(type='hidden', name='DIRECT_CRM_SSID', value='djnap9o1v8a1r10tf9dq22bg31')
+            input(type='hidden', name='CLICK_ID', value='')
+            .errors_block
+            input.b-input-text(name='DIRECT_CRM_NAME', tabindex='1', type='text', required='', autocomplete='off', value='', placeholder='Имя')
+            input.b-input-text(name='DIRECT_CRM_LASTNAME', tabindex='1', type='text', required='', autocomplete='off', value='', placeholder='Фамилия')
+            input.b-input-text(name='DIRECT_CRM_EMAIL', tabindex='2', type='email', required='', autocomplete='off', value='', placeholder='E-mail')
+            input.b-input-text(name='DIRECT_CRM_PASSWORD', style="width: 280px;margin-bottom: 10px;font-family: 'PfDinTextPro';", tabindex='3', type='password', required='', autocomplete='off', value='', placeholder='Пароль')
+            input.b-input-text(name='DIRECT_CRM_CONFIRM_PASSWORD', style="width: 280px;margin-bottom: 10px;font-family: 'PfDinTextPro';", tabindex='3', type='password', required='', autocomplete='off', value='', placeholder='Подтвердите пароль')
+            select(name='DIRECT_CRM_SEX', title='Пол')
+              option(value='male') Мужской
+              option(value='female') Женский
+            input#DIRECT_CRM_BIRTHDAY.b-input-text(name='DIRECT_CRM_BIRTHDAY', tabindex='1', type='text', required='', autocomplete='off', value='', placeholder='Дата рождения')
+            br
+            input#agree(name='DIRECT_CRM_AGREEMENT', type='checkbox', value='Y', style='display:inline-block;', checked='')
+            | Я согласен получать информационные рассылки от Panasonic.
+            br
+            | Регистрируясь, Я подтверждаю, что согласен на 
+            a(href='https://club.panasonic.ru/upload/contests/documents/conditions.pdf', target='_blank') обработку персональных данных
+            | .
+            br
+            .g-recaptcha(style='padding-top:20px;', data-sitekey='6LfGjz0UAAAAABQDmqE2w2YR32XFsg9A0iTcEnLS')
+            button(onclick="ga('IGuruclub.send', 'event', 'button', 'click');ga('send', 'event', 'button', 'click');yaCounter41146909.reachGoal('clubrega');jQuery('#DIRECT_CRM_REGISTER_FORM').submit(); return false;") Зарегистрироваться
+            input(type='hidden', name='DIRECT_CRM_REGISTER', value='Y')
+            input(type='hidden', name='DIRECT_USE_EXTEND_REGISTER', value='Y')
+        span.direct_crm_component_area
+        .with_social.shadow
+          span.label
+            | Зарегистрироваться 
+            br
+            | как пользователь:
+          a.vk(href='https://oauth.vk.com/authorize?client_id=4690025&scope=notify&redirect_uri=https://club.panasonic.ru/index.php?SocialAutherProvider=vk&response_type=code')
+          a.facebook(href='https://www.facebook.com/dialog/oauth?client_id=755742007856121&redirect_uri=https://club.panasonic.ru/index.php?SocialAutherProvider=facebook&response_type=code&scope=email,user_birthday')
+          a.twitter(href='https://www.odnoklassniki.ru/oauth/authorize?client_id=1113492992&response_type=code&redirect_uri=https://club.panasonic.ru/index.php?SocialAutherProvider=odnoklassniki')
+      // registration
+      .lostPassword(style='display: none;')
+        h2 ВОССТАНОВЛЕНИЕ ПАРОЛЯ
+        .forgotPassword
+          form#DIRECT_CRM_RESTORE_PASSWORD_FORM(name='bform', method='post', action='')
+            input(type='hidden', name='DIRECT_CRM_RESTORE_PASSWORD', value='Y')
+            input.b-input-text(name='DIRECT_CRM_EMAIL_OR_PHONE', tabindex='1', type='email', required='', autocomplete='off', value='', placeholder='E-mail')
+            input(name='DIRECT_CRM_SSID', type='hidden', value='djnap9o1v8a1r10tf9dq22bg31')
+            button(onclick="jQuery('#DIRECT_CRM_RESTORE_PASSWORD_FORM').submit(); return false;") Отправить
+        span.direct_crm_component_area
+    // authorization
+    #menu.sidebar_window(style='display: none;')
+      h2 МЕНЮ
+      ul.main_menu.shadow
+        li.mobile-visible
+          a(href='/contests/list.php') Конкурс
+          ul
+            // li><a href="/contests/beard/">Приключения бороды</a></li
+            // li><a href="/contests/new-year-gifts/">Новогодние подарки на раз-два-три!</a></li
+            li
+              a(href='/100years/') Век инноваций
+            li
+              a(href='/contests/epilators/') К лету со всех ног
+            // li><a href="/contests/epilators/">Приближай весну!</a></li
+            // li><a href="/contests/summer/">Лучший кадр лета</a></li
+            //
+              li><a href="/contests/cooklook/image-year/">Новый год, новый Look</a></li>
+              <li><a href="/contests/breakfast/">Любимый завтрак</a></li>
+              <li><a href="/contests/perfect-day/">Идеальный день</a></li
+        li
+          a(href='/news/') Новости
+        li
+          a Сообщества
+          ul
+            li
+              a(href='/forum/') LUMIX
+            li
+              a(href='/cooklook/') Cook&Look
+        li
+          a(href='/forum/') Форум
+        li
+          a(href='https://www.panasonic.com/ru/support.html', target='_blank') Поддержка
+        li
+          a(href='/feedback.php') Служба поддержки
+      h2 ТЕГИ
+      .tags_block.shadow
+        a.tag(href='/news/?TAG_1=25423', style='background:#f41d24;') Важное
+        a.tag(href='/news/?TAG_1=25424', style='background:#a4009a;') Мои увлечения
+        a.tag(href='/news/?TAG_1=25425', style='background:#5ac883;') Красота и здоровье
+        a.tag(href='/news/?TAG_1=25426', style='background:#e14834;') Мой дом
+        a.tag(href='/news/?TAG_1=25427', style='background:#78969a;') Дело
+        a.tag(href='/news/?TAG_1=25428', style='background:#e2d40a;') Новинка
+      .official.shadow
+        h2
+          | ОФИЦИАЛЬНЫЙ
+          br
+          |  интернет-магазин
+        a(href='https://eplaza.panasonic.ru/')
+    #profile.sidebar_window(style='display: none;')
+      h2 профиль
+      .profile_top
+        a.avatar_container(href='/profile/')
+          img(src='https://club.panasonic.ru/direct_crm/avatars/key.png', alt='')
+        .profile_name
+          span.name
+          a.to_profile(href='/profile/')
+      .scores.shadow
+      a.logout(href='#', onclick="jQuery('#DIRECT_CRM_LOGOUT').submit(); return false;") Выйти
+      form#DIRECT_CRM_LOGOUT(method='post', action='/epilators/')
+        input(type='hidden', name='DIRECT_CRM_SSID', value='djnap9o1v8a1r10tf9dq22bg31')
+        input(type='hidden', name='logout', value='yes')
+        input(type='hidden', name='backurl', value='/epilators/')
