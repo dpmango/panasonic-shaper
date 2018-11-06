@@ -63,7 +63,7 @@
   flex: 1 1 auto
   display: flex
   flex-direction: column
-  position: relative
+  // position: relative
   position: absolute
   top: 0
   bottom: 0
@@ -81,17 +81,25 @@
     object-fit: cover
   &__beard
     position: absolute
-    left: 20.6%
-    top: 3.5%
+    // left: 20.6%
+    // top: 3.5%
+    display: flex
+    flex-direction: column
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
     z-index: 2
-    svg
+    svg, img
+      flex: 1 1 auto
       max-width: 100%
+      object-fit: cover
   &__sign
     position: absolute
-    z-index: 2
+    z-index: 3
     bottom: 5%
     right: 0
-    img
+    img, svg
       max-width: 100%
 
 
@@ -100,7 +108,7 @@
     width: 56vw
     max-width: 900px
     &__beard
-      display: none
+      // display: none
       // top: 0
       // svg
       //   max-width: 85%
