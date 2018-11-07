@@ -13,6 +13,7 @@ var animations   = require('postcss-animation');
 var respType     = require('postcss-responsive-type');
 var focus        = require('postcss-focus');
 var easings      = require('postcss-easings');
+var pxToViewport = require('postcss-px-to-viewport');
 var cssnano      = require('cssnano');
 var plumber      = require('gulp-plumber');
 var config       = require('../config');
@@ -42,6 +43,17 @@ var processors = [
   }),
   sorting(),
   pseudoel(),
+  pxToViewport({
+    unitToConvert: 'px',
+    viewportWidth: 1040,
+    // viewportHeight: 1040, // not now used; TODO: need for different units and math for different properties
+    unitPrecision: 5,
+    viewportUnit: 'vh',
+    fontViewportUnit: 'vh',  // vmin is more suitable.
+    selectorBlackList: ['container'],
+    minPixelValue: 1,
+    mediaQuery: false
+  }),
   flexbugs()
 ];
 
